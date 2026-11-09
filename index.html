@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimarket Sanmich | Abarrotes y Sabor Casero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-pink: #ff007f;
+            --bright-pink: #ff3399;
+            --vibrant-pink: #ff66b2;
+            --soft-pink: #ffe6f2;
+            --deep-pink: #cc0066;
+            --gradient-barbie: linear-gradient(135deg, #ff007f 0%, #ff3399 50%, #ff66b2 100%);
+            --gradient-bg: linear-gradient(135deg, #ffe6f2 0%, #ffcbe6 50%, #ffa3d1 100%);
+            --dark-text: #4a0026;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { 
+            background: var(--gradient-bg); 
+            background-attachment: fixed;
+            color: var(--dark-text); 
+            padding-bottom: 60px; 
+        }
+
+        header {
+            background: var(--gradient-barbie);
+            padding: 1.2rem 2rem;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 5px 20px rgba(255, 0, 127, 0.4);
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 3px solid #ff99cc;
+        }
+
+        .logo { color: #fff; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .btn-header { background: #fff; color: var(--primary-pink); border: none; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3); transition: transform 0.2s; }
+        .btn-header:hover { transform: scale(1.05); background: #fff0f5; }
+        
+        .hero { 
+            background: var(--gradient-barbie); 
+            color: white; 
+            text-align: center; 
+            padding: 3rem 1.5rem; 
+            border-bottom-left-radius: 45px; 
+            border-bottom-right-radius: 45px; 
+            margin-bottom: 1.5rem; 
+            box-shadow: 0 15px 35px rgba(255, 0, 127, 0.4);
+            border: 3px solid #ff99cc;
+            border-top: none;
+        }
+        .hero h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 0 3px 6px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.35rem; font-weight: 700; opacity: 0.98; font-style: italic; max-width: 800px; margin: 0 auto; text-shadow: 0 2px 4px rgba(0,0,0,0.2); line-height: 1.4; }
+
+        .promo-banner-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 1.5rem 0;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        @keyframes ledGlowPink {
+            0% { border-color: #ff007f; box-shadow: 0 0 25px #ff007f, inset 0 0 15px #ff3399; }
+            33% { border-color: #ff66b2; box-shadow: 0 0 30px #ff66b2, inset 0 0 20px #ff007f; }
+            66% { border-color: #ff99cc; box-shadow: 0 0 25px #ff99cc, inset 0 0 15px #ff3399; }
+            100% { border-color: #ff007f; box-shadow: 0 0 25px #ff007f, inset 0 0 15px #ff3399; }
+        }
+
+        .promo-banner {
+            background: linear-gradient(135deg, #4a0026 0%, #ff007f 50%, #ff3399 100%);
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 320px;
+            position: relative;
+            color: white;
+            border: 4px solid #ff007f;
+            animation: ledGlowPink 3s infinite linear;
+            transition: opacity 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .promo-banner-content { padding: 3rem 2.5rem; max-width: 55%; z-index: 2; }
+        .promo-banner-tag {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .promo-banner-title { font-size: 2.3rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.2rem; text-shadow: 0 3px 8px rgba(0,0,0,0.4); }
+        .promo-banner-btn {
+            background: white;
+            color: var(--primary-pink);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .promo-banner-btn:hover { transform: scale(1.08); background: #fff0f5; }
+
+        .promo-banner-img {
+            width: 45%;
+            height: 320px;
+            object-fit: cover;
+            border-top-left-radius: 120px;
+            border-bottom-left-radius: 120px;
+            border-left: 4px solid rgba(255,255,255,0.4);
+        }
+
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            border: none;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .banner-arrow:hover { background: var(--primary-pink); }
+        .banner-arrow-left { left: 1.8rem; }
+        .banner-arrow-right { right: 1.8rem; }
+
+        .banner-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+        .banner-dot {
+            width: 12px; height: 12px; border-radius: 50%; background: #ff99cc; cursor: pointer; transition: all 0.3s;
+        }
+        .banner-dot.active {
+            width: 30px; border-radius: 12px; background: var(--primary-pink); box-shadow: 0 0 10px var(--primary-pink);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        .search-bar { 
+            position: relative; 
+            max-width: 850px; 
+            margin: 2rem auto 2rem auto; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-bar input { 
+            width: 100%; 
+            padding: 1.3rem 2rem 1.3rem 4.2rem; 
+            border-radius: 50px; 
+            border: 4px solid var(--bright-pink); 
+            outline: none; 
+            font-size: 1.25rem; 
+            background: white; 
+            box-shadow: 0 10px 30px rgba(255, 51, 153, 0.35); 
+            font-weight: 600; 
+            color: var(--dark-text); 
+        }
+        .search-bar i { 
+            position: absolute; 
+            left: 1.8rem; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            color: var(--primary-pink); 
+            font-size: 1.6rem; 
+        }
+
+        .countdown-container {
+            background: var(--gradient-barbie);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 950px;
+            margin: 0 auto 2.5rem auto;
+            box-shadow: 0 12px 35px rgba(255, 0, 127, 0.45);
+            border: 3.5px solid #ffffff;
+            animation: ledGlowPink 3s infinite linear;
+        }
+        .countdown-title { 
+            font-size: 1.65rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            margin-bottom: 1rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px; 
+            text-shadow: 0 3px 6px rgba(0,0,0,0.3); 
+        }
+        .countdown-timer { display: flex; justify-content: center; align-items: center; gap: 20px; }
+        .time-box { 
+            background: rgba(255, 255, 255, 0.25); 
+            padding: 10px 24px; 
+            border-radius: 20px; 
+            backdrop-filter: blur(6px); 
+            min-width: 100px; 
+            border: 2px solid rgba(255,255,255,0.6); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .time-box span { display: block; font-size: 2.4rem; font-weight: 800; line-height: 1; text-shadow: 0 2px 5px rgba(0,0,0,0.25); }
+        .time-box label { font-size: 0.85rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; opacity: 0.95; margin-top: 4px; display: block; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+        .product-card {
+            background: white; border-radius: 22px; overflow: hidden;
+            box-shadow: 0 8px 20px rgba(255, 0, 127, 0.2);
+            border: 3px solid #ffb3d9; display: flex; flex-direction: column; position: relative; transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: #ff007f;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.7);
+        }
+
+        .product-gallery { width: 100%; background: #fff; border-bottom: 2px solid #ffe6f2; }
+        .product-img { width: 100%; height: 180px; object-fit: cover; display: block; cursor: zoom-in; }
+        
+        /* 1. ESTILOS PARA MINIATURAS (REQUISITO 1) */
+        .product-thumbnails { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 6px; 
+            padding: 8px 10px; 
+            overflow: hidden; 
+        }
+        .product-thumb { 
+            width: 52px; 
+            height: 48px; 
+            flex: 0 0 52px; 
+            object-fit: cover; 
+            border: 2px solid #ffc1df; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            opacity: 0.85; 
+            transition: 0.2s ease; 
+        }
+        .product-thumb:hover { 
+            opacity: 1; 
+            border-color: var(--primary-pink); 
+            transform: translateY(-2px); 
+        }
+
+        .product-badge { position: absolute; top: 12px; right: 12px; background: var(--gradient-barbie); color: white; padding: 5px 12px; border-radius: 14px; font-size: 0.75rem; font-weight: 800; z-index: 2; }
+        .product-info { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.3rem; color: #4a0026; }
+        .product-desc { font-size: 0.82rem; color: #800040; margin-bottom: 0.8rem; flex-grow: 1; }
+        .product-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary-pink); }
+        
+        .btn-add { background: var(--gradient-barbie); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s; box-shadow: 0 4px 10px rgba(255,0,127,0.4); }
+        .btn-add:hover { transform: scale(1.15); box-shadow: 0 0 20px #ff007f; }
+
+        @keyframes ledSparklePink {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; filter: drop-shadow(0 0 10px #ff007f); }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+        }
+        .sparkle-particle { position: fixed; font-size: 1.5rem; pointer-events: none; z-index: 9999; animation: ledSparklePink 0.8s forwards; }
+
+        .reviews-section {
+            margin-top: 3.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(255, 0, 127, 0.25);
+            border: 3px solid var(--bright-pink);
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.8rem;
+        }
+        .review-card {
+            background: #fff0f8;
+            border-radius: 20px;
+            padding: 1.4rem;
+            border: 2px solid #ffb3d9;
+            box-shadow: 0 5px 15px rgba(255, 0, 127, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+        .review-author {
+            font-weight: 800;
+            color: var(--primary-pink);
+            font-size: 0.95rem;
+        }
+        .review-score {
+            background: var(--gradient-barbie);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+        .review-text {
+            font-size: 0.85rem;
+            color: var(--dark-text);
+            line-height: 1.5;
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+        .review-stars {
+            color: #ffcc00;
+            font-size: 0.85rem;
+        }
+
+        .add-review-box {
+            margin-top: 2.5rem;
+            background: #fff;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 2px dashed var(--primary-pink);
+        }
+        .add-review-box h3 {
+            color: var(--primary-pink);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+        .add-review-box input, .add-review-box select, .add-review-box textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.8rem;
+            border-radius: 12px;
+            border: 2px solid var(--bright-pink);
+            outline: none;
+            font-size: 0.9rem;
+            background: #fffafc;
+        }
+        .add-review-box textarea { resize: none; height: 80px; }
+        .btn-submit-review {
+            background: var(--gradient-barbie);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,0,127,0.3);
+            transition: transform 0.2s;
+        }
+        .btn-submit-review:hover { transform: scale(1.05); }
+
+        .shipping-section { margin-top: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 30px; padding: 2.2rem; box-shadow: 0 15px 35px rgba(255, 0, 127, 0.25); border: 3px dashed var(--bright-pink); }
+        .shipping-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .shipping-box { background: #fff0f8; border-radius: 20px; padding: 1.4rem; border: 2px solid #ffb3d9; position: relative; }
+        .section-badge-num { position: absolute; top: -14px; left: 18px; background: var(--gradient-barbie); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+
+        .courier-info-card { 
+            background: var(--gradient-barbie); 
+            color: white; 
+            padding: 12px 16px; 
+            border-radius: 16px; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            display: flex; 
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            width: 100%; 
+            margin-bottom: 12px; 
+            box-shadow: 0 4px 12px rgba(255, 0, 127, 0.25); 
+            cursor: pointer; 
+            border: 2.5px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .courier-info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px #ff007f, inset 0 0 10px #ffffff;
+        }
+
+        @keyframes activePinkLed {
+            0% { border-color: #ffffff; box-shadow: 0 0 25px #ff007f, 0 0 10px #ff3399, inset 0 0 12px #ffffff; }
+            50% { border-color: #ff99cc; box-shadow: 0 0 35px #ff007f, 0 0 15px #ff66b2, inset 0 0 18px #ffffff; }
+            100% { border-color: #ffffff; box-shadow: 0 0 25px #ff007f, 0 0 10px #ff3399, inset 0 0 12px #ffffff; }
+        }
+
+        .courier-info-card.selected-led {
+            border: 3px solid #ffffff;
+            animation: activePinkLed 1.6s infinite ease-in-out;
+            background: linear-gradient(135deg, #ff007f 0%, #cc0066 100%);
+            transform: scale(1.02);
+        }
+
+        .courier-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .courier-success-msg {
+            font-size: 0.75rem;
+            color: #fff0f8;
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2px 8px;
+            border-radius: 6px;
+            display: none;
+            width: 100%;
+            margin-top: 2px;
+        }
+        .courier-info-card.selected-led .courier-success-msg {
+            display: block;
+        }
+
+        .btn-empaque { background: var(--primary-pink); border: none; color: white; padding: 12px; border-radius: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer; width: 100%; justify-content: center; margin-top: 8px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(255,0,127,0.3); }
+        .btn-empaque:hover { background: #cc0066; }
+
+        .moto-option-btn { background: #cc0066; color: white; border: 2px solid #99004d; padding: 11px 16px; border-radius: 16px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 10px; }
+        .moto-option-btn:hover { background: #ff007f; box-shadow: 0 0 20px rgba(255, 0, 127, 0.6); }
+
+        .motorcycle-anim { text-align: center; font-size: 2.8rem; color: var(--primary-pink); margin-bottom: 0.8rem; animation: moveBike 2s infinite ease-in-out; }
+        @keyframes moveBike { 0%, 100% { transform: translateX(-12px); } 50% { transform: translateX(12px); } }
+
+        .address-box { margin-top: 1rem; text-align: left; }
+        .address-box label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--dark-text); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 6px; }
+        .address-box textarea { width: 100%; height: 65px; padding: 0.6rem; border-radius: 14px; border: 2px solid var(--bright-pink); outline: none; font-size: 0.82rem; resize: none; background: white; }
+
+        .empaque-unified-box {
+            margin-top: 16px;
+            padding: 1.4rem 1.2rem;
+            background: linear-gradient(135deg, #fff0f8 0%, #ffe6f2 100%);
+            border-radius: 22px;
+            border: 2.5px solid var(--primary-pink);
+            box-shadow: 0 8px 25px rgba(255, 0, 127, 0.15);
+            text-align: center;
+        }
+
+        .empaque-unified-header {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-pink);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .empaque-unified-desc {
+            font-size: 0.92rem;
+            color: #55002b;
+            font-weight: 600;
+            line-height: 1.65;
+            margin-bottom: 0;
+            padding: 0 8px;
+        }
+
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--gradient-barbie); color: white; padding: 14px 28px; border-radius: 35px; font-weight: 800; box-shadow: 0 10px 25px rgba(255, 0, 127, 0.5); border: 2px solid #ff99cc; transition: transform 0.3s ease; z-index: 1000; display: flex; align-items: center; gap: 10px; }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        @keyframes lockPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.04); box-shadow: 0 0 25px rgba(255, 0, 127, 0.6); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-admin-access { 
+            background: white; 
+            border: 3.5px solid var(--primary-pink); 
+            color: var(--primary-pink); 
+            padding: 1rem 2.5rem; 
+            border-radius: 35px; 
+            font-weight: 800; 
+            font-size: 1.15rem; 
+            cursor: pointer; 
+            margin-top: 3.5rem; 
+            box-shadow: 0 8px 25px rgba(255,0,127,0.25); 
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            animation: lockPulse 2.5s infinite ease-in-out;
+        }
+        .btn-admin-access:hover { 
+            background: var(--primary-pink); 
+            color: white; 
+            box-shadow: 0 0 30px rgba(255,0,127,0.8);
+            transform: translateY(-3px);
+        }
+        .btn-admin-access i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        .btn-admin-access:hover i {
+            transform: rotate(-15deg) scale(1.2);
+        }
+
+        .ai-widget { position: fixed; bottom: 20px; left: 20px; z-index: 400; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+        
+        .ai-btn {
+            background: var(--gradient-barbie); color: white; border: none; width: 68px; height: 68px;
+            border-radius: 50%; cursor: pointer; box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5);
+            font-size: 1.8rem; display: flex; align-items: center; justify-content: center;
+            border: 3px solid #ff99cc; transition: transform 0.2s; animation: robotBounce 3s infinite ease-in-out;
+        }
+        @keyframes robotBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        .ai-btn:hover { transform: scale(1.1); }
+        
+        .ai-chat {
+            display: none; position: absolute; bottom: 85px; left: 0; width: 360px; height: 500px;
+            background: white; border-radius: 22px; box-shadow: 0 15px 40px rgba(255, 0, 127, 0.3);
+            flex-direction: column; overflow: hidden; border: 3px solid var(--bright-pink);
+        }
+        .ai-chat.active { display: flex; }
+        
+        .ai-header { background: var(--gradient-barbie); color: white; padding: 0.9rem 1.1rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+        .ai-body { flex-grow: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; background: #fff0f8; }
+        .ai-msg { padding: 12px 16px; border-radius: 16px; max-width: 92%; box-shadow: 0 3px 8px rgba(0,0,0,0.06); line-height: 1.5; font-family: 'Poppins', sans-serif; font-size: 0.86rem; }
+        .ai-msg.bot { background: white; color: var(--dark-text); align-self: flex-start; border: 1.5px solid #ffb3d9; }
+        .ai-msg.user { background: var(--primary-pink); color: white; align-self: flex-end; }
+        .ai-typing { font-style: italic; color: #880044; font-size: 0.8rem; display: none; align-items: center; gap: 5px; padding: 6px 12px; background: white; border-radius: 12px; width: fit-content; border: 1.5px solid #ffb3d9; align-self: flex-start; }
+        .ai-quick-options { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .ai-chip { background: #ffe6f2; border: 1.5px solid var(--bright-pink); color: var(--primary-pink); padding: 5px 10px; border-radius: 14px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .ai-chip:hover { background: var(--primary-pink); color: white; }
+        .ai-input-area { display: flex; padding: 0.6rem; background: white; border-top: 2px solid #ffb3d9; }
+        .ai-input-area input { flex-grow: 1; border: 2px solid var(--bright-pink); border-radius: 20px; padding: 0.5rem 0.9rem; outline: none; font-size: 0.85rem; }
+        .ai-input-area button { background: var(--primary-pink); color: white; border: none; padding: 0.5rem 0.9rem; border-radius: 20px; margin-left: 6px; cursor: pointer; font-weight: 700; }
+
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(74, 0, 38, 0.6); display: none; z-index: 200; backdrop-filter: blur(3px); }
+        .cart-drawer { position: fixed; top: 0; right: -380px; width: 350px; height: 100%; background: white; z-index: 201; transition: right 0.3s ease; display: flex; flex-direction: column; padding: 1.5rem; box-shadow: -10px 0 30px rgba(255,0,127,0.3); border-left: 3px solid var(--bright-pink); }
+        .cart-drawer.active { right: 0; }
+        .cart-overlay.active { display: block; }
+        .cart-items { flex-grow: 1; overflow-y: auto; margin: 1rem 0; }
+        .cart-item { display: flex; align-items: center; gap: 10px; margin-bottom: 0.9rem; border-bottom: 1.5px solid #ffe6f2; padding-bottom: 0.6rem; }
+        .btn-whatsapp { width: 100%; background: #25d366; color: white; border: none; padding: 0.9rem; border-radius: 22px; font-weight: 800; cursor: pointer; }
+
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(74, 0, 38, 0.6); display: none; justify-content: center; align-items: center; z-index: 300; backdrop-filter: blur(4px); }
+        .modal.active { display: flex; }
+        .modal-content { background: white; padding: 1.8rem; border-radius: 24px; width: 90%; max-width: 600px; box-shadow: 0 15px 45px rgba(255, 0, 127, 0.4); border: 4px solid var(--bright-pink); position: relative; }
+        .modal-content input, .modal-content select, .modal-content textarea { width: 100%; padding: 0.6rem 0.8rem; margin-bottom: 0.8rem; border-radius: 10px; border: 2px solid var(--bright-pink); outline: none; font-size: 0.88rem; background: #fffafc; }
+
+        .modal-close-x {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #ffe6f2;
+            color: var(--primary-pink);
+            border: 2px solid var(--bright-pink);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .modal-close-x:hover {
+            background: var(--primary-pink);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .admin-list-container { max-height: 220px; overflow-y: auto; margin-top: 0.5rem; border-top: 2px dashed var(--bright-pink); padding-top: 0.8rem; }
+        .admin-item-row { display: flex; align-items: center; justify-content: space-between; background: #fff0f8; padding: 8px 12px; border-radius: 12px; margin-bottom: 6px; font-size: 0.82rem; border: 1.5px solid #ffb3d9; }
+
+        /* 2 y 3. ESTILOS MODAL ZOOM Y LUPA MEJORADA (REQUISITO 2 y 3) */
+        .zoom-modal { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.94); backdrop-filter: blur(12px); 
+            display: none; justify-content: center; align-items: center; 
+            z-index: 500; flex-direction: column; 
+        }
+        .zoom-modal.active { display: flex; }
+        
+        .zoom-container { 
+            position: relative; width: 95vw; height: 75vh; 
+            display: flex; justify-content: center; align-items: center; 
+            overflow: hidden; border-radius: 20px; 
+            touch-action: none;
+        }
+        .zoom-img { 
+            max-width: 90vw; max-height: 75vh; object-fit: contain; 
+            border-radius: 12px; cursor: grab; 
+            transform-origin: center center;
+            transition: transform 0.1s ease-out;
+            user-select: none; -webkit-user-drag: none; 
+        }
+        .zoom-img:active { cursor: grabbing; }
+
+        .zoom-close { 
+            position: absolute; top: 20px; right: 25px; 
+            background: white; color: var(--primary-pink); 
+            width: 48px; height: 48px; border-radius: 50%; 
+            font-size: 1.5rem; display: flex; align-items: center; 
+            justify-content: center; cursor: pointer; z-index: 530; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+        }
+        .zoom-arrow { 
+            position: absolute; top: 50%; transform: translateY(-50%); 
+            background: rgba(255, 0, 127, 0.85); color: white; border: none; 
+            width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; 
+            cursor: pointer; z-index: 520; display: flex; align-items: center; 
+            justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+            transition: transform 0.2s; 
+        }
+        .zoom-arrow:hover { transform: translateY(-50%) scale(1.1); background: var(--primary-pink); }
+        .zoom-arrow-left { left: 20px; }
+        .zoom-arrow-right { right: 20px; }
+
+        /* Controles de Lupa (+) (-) (REQUISITO 3) */
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+            z-index: 520;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 16px;
+            border-radius: 30px;
+            backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+        }
+        .zoom-btn {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        .zoom-btn:hover { transform: scale(1.12); background: var(--bright-pink); }
+        .zoom-reset-btn {
+            background: white;
+            color: var(--primary-pink);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        .zoom-reset-btn:hover { background: #fff0f5; }
+
+        .zoom-counter { 
+            margin-top: 10px; color: white; font-weight: 800; font-size: 0.95rem; 
+            background: rgba(0,0,0,0.6); padding: 4px 14px; border-radius: 20px; 
+            border: 1.5px solid var(--bright-pink); z-index: 520; 
+        }
+
+        @media (max-width: 600px) {
+            .product-img { height: 190px; }
+            .product-thumb { width: 48px; height: 44px; flex-basis: 48px; }
+            .zoom-arrow { width: 40px; height: 40px; font-size: 1.1rem; }
+            .zoom-arrow-left { left: 8px; }
+            .zoom-arrow-right { right: 8px; }
+            .zoom-container { width: 96vw; height: 68vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fa-solid fa-basket-shopping"></i> Minimarket Sanmich</div>
+        <button class="btn-header" id="cartBtn" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i> (<span id="cart-count">0</span>)
+        </button>
+    </header>
+
+    <section class="hero">
+        <h1>Minimarket Sanmich</h1>
+        <H2>🛒🛍️ “De la familia para tu hogar: abarrotes y sabor casero desde Tumbes, Perú 🇵🇪” 🛍️🛒</H2>
+    </section>
+
+    <!-- BANNER DE PUBLICIDAD ROTATIVO EXTRA GRANDE -->
+    <div class="promo-banner-container">
+        <button class="banner-arrow banner-arrow-left" onclick="changeBanner(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="banner-arrow banner-arrow-right" onclick="changeBanner(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <div class="promo-banner" id="mainPromoBanner">
+            <div class="promo-banner-content">
+                <span class="promo-banner-tag" id="bannerTag">PATROCINADO / OFERTA</span>
+                <h2 class="promo-banner-title" id="bannerTitle">Delicioso, Crunchy & Cremoso</h2>
+                <button class="promo-banner-btn" onclick="location.href='#productsGrid'">
+                    <span>¡VER TODO!</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80" class="promo-banner-img" id="bannerImg" alt="Anuncio Promocional">
+        </div>
+
+        <div class="banner-dots" id="bannerDotsContainer"></div>
+    </div>
+
+    <main class="container">
+        <!-- BARRA DE BÚSQUEDA DE ABARROTES AMPLIADA Y ALINEADA -->
+        <div class="search-bar" id="productsGrid">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar abarrotes o productos..." onkeyup="filterProducts()">
+        </div>
+
+        <!-- RELOJ REGRESIVO "¡SOLO POR HOY!" -->
+        <div class="countdown-container">
+            <div class="countdown-title">🔥 ¡Solo por hoy! Ofertas Especiales ⏳</div>
+            <div class="countdown-timer">
+                <div class="time-box">
+                    <span id="hours">09</span>
+                    <label>Hrs</label>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">21</span>
+                    <label>Min</label>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">17</span>
+                    <label>Seg</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGridContainer"></div>
+
+        <!-- SECCIÓN DE RESEÑAS -->
+        <section class="reviews-section">
+            <h2 style="text-align: center; color: var(--primary-pink); font-size: 1.8rem; font-weight: 800;">⭐ Opiniones de Nuestros Clientes 💖</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: #660033; margin-top: 0.3rem; font-weight: 600;">Lo que dicen quienes ya compraron y probaron nuestro sabor casero en todo el Perú 🇵🇪</p>
+            
+            <div class="reviews-grid" id="reviewsContainer"></div>
+
+            <div class="add-review-box">
+                <h3>✍️ ¡Déjanos tu reseña y opinión DEL 1 AL 10 !</h3>
+                <input type="text" id="reviewAuthorName" placeholder="Tu Nombre y Ciudad (Ej: María López - Lima)">
+                <select id="reviewScoreSelect">
+                    <option value="10 de 10">⭐ 10 de 10 (¡EXCELENTE BUEN SERVICIO!)</option>
+                    <option value="9 de 9">⭐ 9 de 9 (¡Muy BUENA CALIDAD!)</option>
+                    <option value="8 de 8">⭐ 8 de 8 (¡Me encantó todo!)</option>
+                    <option value="7 de 6">⭐ 7 de 6 (¡LO RECOMIENDO ES UN WEB CONFIABLE !)</option>
+                    <option value="1 de 4 ">⭐ 1 de 4 (¡MUY MALO NO LO RECOMIEDNO !)</option>
+                </select>
+                <textarea id="reviewMessageText" placeholder="Escribe aquí tu experiencia comprando en Minimarket Sanmich..."></textarea>
+                <button class="btn-submit-review" onclick="addNewCustomerReview()">
+                    <i class="fa-solid fa-paper-plane"></i> Publicar Reseña 🌸
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE ENVÍOS -->
+        <section class="shipping-section">
+            <h2 style="text-align: center; color: var(--primary-pink); font-size: 1.6rem;">🛵 Envíos y Entregas a Todo el Perú 📦</h2>
+            <div class="shipping-grid">
+                <!-- DELIVERY EXPRESS EN MOTO -->
+                <div class="shipping-box" style="text-align: center;">
+                    <div class="section-badge-num">2</div>
+                    <div class="motorcycle-anim"><i class="fa-solid fa-motorcycle"></i></div>
+                    <h3 style="color: var(--primary-pink); margin-bottom: 0.5rem;">Delivery Express en Moto</h3>
+                    <p style="font-size: 0.82rem; color: #660033; margin-bottom: 0.8rem; font-weight: 600;">Selecciona tu zona de entrega en moto:</p>
+                    
+                    <button class="moto-option-btn" id="motoOptionBtn1" onclick="addMotoDeliveryToCartDynamic(1, this)">
+                        <span><i class="fa-solid fa-circle-check"></i> <span id="displayMotoName1">Puyango</span> (Costo: S/ <span id="displayMotoPrice1">8.00</span>)</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 3px 8px; border-radius: 8px;">S/ <span id="displayMotoBadge1">8.00</span></span>
+                    </button>
+
+                    <button class="moto-option-btn" id="motoOptionBtn2" onclick="addMotoDeliveryToCartDynamic(2, this)">
+                        <span><i class="fa-solid fa-circle-check"></i> <span id="displayMotoName2">Tumbes Centro</span> (<span id="displayMotoSub2">Coordinar con vendedor</span>)</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 3px 8px; border-radius: 8px;"><span id="displayMotoBadge2">A coordinar</span></span>
+                    </button>
+
+                    <div class="address-box">
+                        <label>
+                            <span style="background: var(--gradient-barbie); color: white; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800;">3</span>
+                            <i class="fa-solid fa-location-dot"></i> Agregar más datos a la dirección de envío:
+                        </label>
+                        <textarea id="deliveryAddressNotes" placeholder="Ej: casa de color verde..." onblur="handleAddressInputBlur()"></textarea>
+                    </div>
+                </div>
+
+                <div class="shipping-box">
+                    <div class="section-badge-num">1</div>
+                    <h3 style="color: var(--primary-pink); margin-bottom: 0.5rem;"><i class="fa-solid fa-map-location-dot"></i> Provincias Disponibles</h3>
+                    <p style="font-size: 0.8rem; color: #660033; margin-bottom: 0.6rem; font-weight: 600;">Destinos con cobertura actual EN TUMBES :</p>
+                    <select id="provinceSelect" onchange="notifyProvinceSelect()" style="width: 100%; padding: 0.6rem; border-radius: 12px; border: 2px solid var(--bright-pink); outline: none; font-weight: 600; background: white;">
+                        <option value="">-- Selecciona Destino --</option>
+                        <option value="Tumbes Centro">Tumbes Centro</option>
+                        <option value="Corrales">Corrales</option>
+                        <option value="Plaza de Armas">Plaza de Armas</option>
+                        <option value="Hospital JAMO">Hospital JAMO</option>
+                        <option value="Los Claveles">Los Claveles</option>
+                        <option value="Túpac Amaru">Túpac Amaru</option>
+                        <option value="politunaNUE">PolitunaNUE</option>
+                        <option value="Puyango">Puyango</option>
+                        <option value="santa catalina">santa catalina </option>
+                        <option value="mercado los honguito ">mercado los honguito</option>
+                         <option value="PAMPA GRANDE ">PAMPA GRANDE </option>
+                    </select>
+                </div>
+
+                <div class="shipping-box" style="border: 3px solid var(--bright-pink);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem;">
+                        <span style="background: var(--gradient-barbie); color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800;">4</span>
+                        <h3 style="color: var(--primary-pink); margin-bottom: 0;"><i class="fa-solid fa-truck-fast"></i> Envíos a Todo el Perú</h3>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #4a0026; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.5;">
+                        📦 Envíos seguros a nivel nacional con Pago en Destino (Tú pagas el costo del envío directamente en la agencia al recoger tu paquete). Tienes estas opciones abajo para seleccionar la agencia de envío de tu localidad más cercana 🛵🎉
+                    </p>
+                    
+                    <!-- AGENCIAS CON BOTÓN "AGREGAR AHORA" Y MENSAJE DE ÉXITO -->
+                    <div class="courier-info-card" id="displayCourier1" onclick="selectCourierOption('courier1', this)">
+                        <div class="courier-top-row">
+                            <span><i class="fa-solid fa-box"></i> <span class="c-name">SHALOM EXPRESS</span></span>
+                            <span style="font-size:0.75rem; background:rgba(255,255,255,0.25); padding:2px 8px; border-radius:10px;">Agregar ahora</span>
+                        </div>
+                        <div class="courier-success-msg">ha sido añadido a su producto con éxito</div>
+                    </div>
+                    <div class="courier-info-card" id="displayCourier2" onclick="selectCourierOption('courier2', this)">
+                        <div class="courier-top-row">
+                            <span><i class="fa-solid fa-truck-ramp-box"></i> <span class="c-name">OLVA COURIER</span></span>
+                            <span style="font-size:0.75rem; background:rgba(255,255,255,0.25); padding:2px 8px; border-radius:10px;">Agregar ahora</span>
+                        </div>
+                        <div class="courier-success-msg">ha sido añadido a su producto con éxito</div>
+                    </div>
+                    <div class="courier-info-card" id="displayCourier3" onclick="selectCourierOption('courier3', this)">
+                        <div class="courier-top-row">
+                            <span><i class="fa-solid fa-truck-fast"></i> <span class="c-name">MUY PRONTO</span></span>
+                            <span style="font-size:0.75rem; background:rgba(255,255,255,0.25); padding:2px 8px; border-radius:10px;">Agregar ahora</span>
+                        </div>
+                        <div class="courier-success-msg">ha sido añadido a su producto con éxito</div>
+                    </div>
+                    <div class="courier-info-card" id="displayCourier4" onclick="selectCourierOption('courier4', this)">
+                        <div class="courier-top-row">
+                            <span><i class="fa-solid fa-store"></i> <span class="c-name">MUY PRONTO</span></span>
+                            <span style="font-size:0.75rem; background:rgba(255,255,255,0.25); padding:2px 8px; border-radius:10px;">Agregar ahora</span>
+                        </div>
+                        <div class="courier-success-msg">ha sido añadido a su producto con éxito</div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                        <span style="background: var(--gradient-barbie); color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0;">5</span>
+                        <button class="btn-empaque" onclick="addEmpaqueToCart()" style="margin-top: 0; flex-grow: 1;">
+                            <i class="fa-solid fa-shield-heart"></i> Añadir Empaque Especial (<span id="displayEmpaquePriceText">S/ 1.50</span>)
+                        </button>
+                    </div>
+                    
+                    <div class="empaque-unified-box">
+                        <div class="empaque-unified-header">
+                            🛡️ Empaque y Costo
+                        </div>
+                        <p class="empaque-unified-desc">
+                            Nuestro empaque especial tiene un costo adicional mínimo de <strong id="displayEmpaquePriceSubtext" style="color: var(--primary-pink);">S/ 1.50</strong>, e incluye cartón doble y corcho anti-golpe para que tus productos viajen totalmente protegidos y lleguen impecables a su destino.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTÓN DE ACCESO ADMINISTRADOR -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn-admin-access" onclick="askAdminPassword()">
+                <i class="fa-solid fa-lock-keyhole"></i> <span>🔒 Solo Administrador</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- CARRITO -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 2px solid #ffb3d9; padding-bottom: 1rem;">
+            <h3 style="color:var(--primary-pink); font-weight: 800;">Tu Pedido 🛍️</h3>
+            <i class="fa-solid fa-xmark" style="cursor:pointer; font-size:1.3rem; color:var(--primary-pink);" onclick="toggleCart()"></i>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div style="border-top: 2px solid #ffb3d9; padding-top: 1rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; font-weight:800; font-size:1.1rem;">
+                <span>Total:</span>
+                <span id="cartTotal" style="color:var(--primary-pink);">S/ 0.00</span>
+            </div>
+            <button class="btn-whatsapp" onclick="sendWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL CLAVE ADMIN -->
+    <div class="modal" id="adminPasswordModal">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-close-x" onclick="closeAdminPasswordModal()"><i class="fa-solid fa-xmark"></i></div>
+            <h3 style="color:var(--primary-pink); margin-bottom: 0.4rem; font-weight: 800;">🔒 Acceso Exclusivo Administrador</h3>
+            <p style="font-size: 0.82rem; color: #880044; margin-bottom: 1rem; font-weight: 700;">⚠️ Zona restringida solo para personal autorizado.</p>
+            <input type="password" id="adminPwdInput" placeholder="Ingresa tu clave secreta" style="text-align: center; font-size: 1.2rem; letter-spacing: 4px;" onkeypress="handleAdminPwdPress(event)">
+            <div style="display: flex; gap: 10px; margin-top: 0.8rem;">
+                <button style="flex: 1; background: #888; color: white; border: none; padding: 0.7rem; border-radius: 12px; font-weight: 700; cursor: pointer;" onclick="closeAdminPasswordModal()">Cancelar</button>
+                <button style="flex: 1; background: var(--gradient-barbie); color: white; border: none; padding: 0.7rem; border-radius: 12px; font-weight: 700; cursor: pointer;" onclick="verifyAdminPassword()">Ingresar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL DE CONTROL INDEPENDIENTE -->
+    <div class="modal" id="addModal">
+        <div class="modal-content" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-close-x" onclick="closeAddModal()"><i class="fa-solid fa-xmark"></i></div>
+
+            <h3 style="color:var(--primary-pink); text-align:center; margin-bottom:1rem; font-weight: 800;">✨ Panel de Control Independiente ✨</h3>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1.2rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:8px;">
+                    🛵 Configurar Opciones de Delivery en Moto (Individuales):
+                </label>
+                
+                <div style="margin-bottom: 10px; border-bottom: 1.5px solid #ffb3d9; padding-bottom: 8px;">
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Moto Opción 1 - Nombre:</label>
+                    <input type="text" id="adminMotoName1" placeholder="Ej: Puyango">
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Precio / Costo en Soles:</label>
+                    <input type="number" step="0.5" id="adminMotoPrice1" placeholder="8.00">
+                </div>
+
+                <div>
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Moto Opción 2 - Nombre:</label>
+                    <input type="text" id="adminMotoName2" placeholder="Ej: Tumbes Centro">
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Subtítulo / Estado:</label>
+                    <input type="text" id="adminMotoSub2" placeholder="Coordinar con vendedor">
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Costo en Soles:</label>
+                    <input type="number" step="0.5" id="adminMotoPrice2" placeholder="0.00">
+                </div>
+
+                <button style="width:100%; background:var(--primary-pink); color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:800; cursor:pointer; margin-top:8px;" onclick="saveMotoDeliverySettings()">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar Opciones de Moto
+                </button>
+            </div>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1.2rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:8px;">
+                    🛡️ Configurar Precio del Empaque Especial:
+                </label>
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Precio en Soles:</label>
+                <input type="number" step="0.1" id="adminEmpaquePrice" placeholder="1.50">
+                <button style="width:100%; background:var(--primary-pink); color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:800; cursor:pointer; margin-top:6px;" onclick="saveEmpaquePriceSettings()">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar Precio de Empaque
+                </button>
+            </div>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1.2rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:8px;">
+                    💳 Configuración de Cuentas de Pago:
+                </label>
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Número de Yape / Titular:</label>
+                <input type="text" id="adminYape" placeholder="Ej: 991406574 (Minimarket Sanmich)">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Número de Plin / Titular:</label>
+                <input type="text" id="adminPlin" placeholder="Ej: 991406574 (Minimarket Sanmich)">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Cuenta Bancaria BCP:</label>
+                <input type="text" id="adminBcp" placeholder="Ej: 575-xxxxxxxx-0-xx">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Cuenta Interbank:</label>
+                <input type="text" id="adminInterbank" placeholder="Ej: 300-300xxxxxxxxxx">
+
+                <button style="width:100%; background:var(--primary-pink); color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:800; cursor:pointer; margin-top:6px;" onclick="savePaymentSettings()">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar Cuentas de Pago
+                </button>
+            </div>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1.2rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:8px;">
+                    🚚 Modificar Nombres de Agencias de Envíos:
+                </label>
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Nombre Agencia 1:</label>
+                <input type="text" id="adminCourier1" placeholder="Ej: SHALOM EXPRESS">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Nombre Agencia 2:</label>
+                <input type="text" id="adminCourier2" placeholder="Ej: OLVA COURIER">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Nombre Agencia 3:</label>
+                <input type="text" id="adminCourier3" placeholder="Ej: MUY PRONTO">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Nombre Agencia 4:</label>
+                <input type="text" id="adminCourier4" placeholder="Ej: MUY PRONTO">
+
+                <button style="width:100%; background:var(--primary-pink); color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:800; cursor:pointer; margin-top:6px;" onclick="saveCourierSettings()">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar Nombres de Agencias
+                </button>
+            </div>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1.2rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:6px;">
+                    📢 Configuración de Banners y Tiempo Global (1 al 8):
+                </label>
+
+                <div style="background: #ffe6f2; padding: 10px; border-radius: 12px; margin-bottom: 10px; border: 1.5px solid var(--bright-pink);">
+                    <label style="font-size: 0.78rem; font-weight: 800; color: var(--primary-pink); display: block; margin-bottom: 4px;">⚡ Tiempo de Rotación Global (para TODOS los Banners):</label>
+                    <input type="number" id="adminBannerGlobalSeconds" min="1" max="60" value="5" placeholder="Segundos">
+                </div>
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Seleccionar Banner:</label>
+                <select id="bannerSelectIndex" onchange="loadSelectedBannerToForm()" style="font-weight: 700; color: var(--primary-pink);">
+                    <option value="0">Banner 1 (Principal)</option>
+                    <option value="1">Banner 2</option>
+                    <option value="2">Banner 3</option>
+                    <option value="3">Banner 4</option>
+                    <option value="4">Banner 5</option>
+                    <option value="5">Banner 6</option>
+                    <option value="6">Banner 7</option>
+                    <option value="7">Banner 8</option>
+                </select>
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Etiqueta:</label>
+                <input type="text" id="adminBannerTag" placeholder="Ej: PATROCINADO">
+                
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">Título:</label>
+                <input type="text" id="adminBannerTitle" placeholder="Ej: Delicioso">
+
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto:</label>
+                <input type="text" id="singleBannerImgUrl" placeholder="https://...">
+
+                <button style="width:100%; background:var(--primary-pink); color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:800; cursor:pointer; margin-top:6px;" onclick="saveCurrentBannerConfig()">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar Cambios de Banners
+                </button>
+            </div>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1.2rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:6px;">
+                    📦 Gestión de Productos (Hasta 6 Fotografías):
+                </label>
+                <div style="display:flex; gap:8px; margin-bottom:8px;">
+                    <select id="productSelectEdit" onchange="loadProductToForm()" style="flex:1; margin-bottom:0;">
+                        <option value="">-- Nuevo Producto --</option>
+                    </select>
+                    <button style="background:var(--primary-pink); color:white; border:none; padding:0 12px; border-radius:8px; font-weight:700; cursor:pointer;" onclick="clearProductForm()">Nuevo</button>
+                </div>
+                
+                <input type="hidden" id="editingProductIndex" value="-1">
+                <input type="text" id="adminProdTitle" placeholder="Nombre del producto">
+                <input type="number" step="0.5" id="adminProdPrice" placeholder="Precio en Soles">
+                <input type="text" id="adminProdBadge" placeholder="Etiqueta">
+                
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto 1:</label>
+                <input type="text" id="adminProdImg1" placeholder="https://...">
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto 2:</label>
+                <input type="text" id="adminProdImg2" placeholder="https://...">
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto 3:</label>
+                <input type="text" id="adminProdImg3" placeholder="https://...">
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto 4:</label>
+                <input type="text" id="adminProdImg4" placeholder="https://...">
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto 5:</label>
+                <input type="text" id="adminProdImg5" placeholder="https://...">
+                <label style="font-size: 0.75rem; font-weight: 700; color: #660033;">URL Foto 6:</label>
+                <input type="text" id="adminProdImg6" placeholder="https://...">
+
+                <textarea id="adminProdDesc" placeholder="Descripción corta..." style="resize:none; height:60px; margin-top:6px;"></textarea>
+
+                <button style="width:100%; background:var(--primary-pink); color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:800; cursor:pointer;" onclick="saveProductFromForm()">
+                    <i class="fa-solid fa-box-archive"></i> Guardar Producto
+                </button>
+
+                <div class="admin-list-container" id="adminProductList"></div>
+            </div>
+
+            <div style="background: #fff0f8; padding: 14px; border-radius: 16px; border: 2px dashed var(--bright-pink); margin-bottom: 1rem;">
+                <label style="font-size:0.85rem; font-weight:800; color:var(--primary-pink); display:block; margin-bottom:6px;">
+                    ⭐ Gestión de Reseñas:
+                </label>
+                <div class="admin-list-container" id="adminReviewsList"></div>
+            </div>
+
+            <button style="width:100%; background:#888; color:white; border:none; padding:0.7rem; border-radius:12px; font-weight:700; cursor:pointer;" onclick="closeAddModal()">
+                <i class="fa-solid fa-door-open"></i> Salir del Panel
+            </button>
+        </div>
+    </div>
+
+    <!-- ZOOM MODAL CON LUPA, BOTONES Y ARRASTRE (REQUISITO 2 y 3) -->
+    <div class="zoom-modal" id="zoomModal">
+        <div class="zoom-close" onclick="closeZoomModal()"><i class="fa-solid fa-xmark"></i></div>
+        <button class="zoom-arrow zoom-arrow-left" onclick="slideZoom(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="zoom-arrow zoom-arrow-right" onclick="slideZoom(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <div class="zoom-container" id="zoomContainer">
+            <img src="" id="zoomImage" class="zoom-img" alt="Zoom Foto">
+        </div>
+
+        <div class="zoom-controls">
+            <button class="zoom-btn" onclick="adjustZoom(0.3)" title="Acercar (+)">+</button>
+            <button class="zoom-btn" onclick="adjustZoom(-0.3)" title="Alejar (-)">−</button>
+            <button class="zoom-reset-btn" onclick="resetZoom()">Restablecer</button>
+        </div>
+        <div class="zoom-counter" id="zoomCounter">1 / 1</div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check" style="font-size: 1.3rem;"></i>
+        <span id="toastMessage">¡Acción realizada con éxito! 🛍️✨</span>
+    </div>
+
+    <!-- ASISTENTE SAMY -->
+    <div class="ai-widget">
+        <button class="ai-btn" onclick="toggleAIChat()" title="Chatea con Samy (Asistente Virtual)">
+            🤖
+        </button>
+
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header">
+                <span>💖 SANMICH (Asistente Virtual Sanmich)</span>
+                <i class="fa-solid fa-xmark" style="cursor:pointer;" onclick="toggleAIChat()"></i>
+            </div>
+
+            <div class="ai-body" id="aiBody">
+                <div class="ai-msg bot">
+                    ¡Hola mi clienta favorita! 🥰 Qué alegría tremenda saludarte hoy. SOY SANMICH, tu asistente favorita, y te recibo con los brazos abiertos desde nuestra hermosa central digital en **Tumbes, Perú** 🇵🇪✨. ¡Dime corazón, ¿en qué te puedo engreír y ayudar hoy? 🛒💖
+                    <div class="ai-quick-options">
+                        <div class="ai-chip" onclick="handleQuickOption('pagos')">💳 Formas de Pago</div>
+                        <div class="ai-chip" onclick="handleQuickOption('envios')">📦 Envíos al Perú</div>
+                        <div class="ai-chip" onclick="handleQuickOption('empaque')">🛡️ Empaque y Costo</div>
+                        <div class="ai-chip" onclick="handleQuickOption('hora')">⏰ ¿Qué hora es?</div>
+                        <div class="ai-chip" onclick="handleQuickOption('productos')">🌟 Recomendaciones</div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-typing" id="aiTypingIndicator">
+                <i class="fa-solid fa-spinner fa-spin"></i> SANMICH está escribiendo...
+            </div>
+
+            <div class="ai-input-area">
+                <input type="text" id="aiInput" placeholder="Escríbele a Samy con confianza..." onkeypress="handleAIPress(event)">
+                <button onclick="sendAIMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.cart = JSON.parse(localStorage.getItem('minimarket_sanmich_cart')) || [];
+
+        function startCountdown() {
+            let h = 9, m = 21, s = 17;
+            setInterval(() => {
+                if (s > 0) { s--; }
+                else {
+                    s = 59;
+                    if (m > 0) { m--; }
+                    else {
+                        m = 59;
+                        if (h > 0) { h--; }
+                        else { h = 23; m = 59; s = 59; }
+                    }
+                }
+                document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+                document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+                document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+            }, 1000);
+        }
+
+        const defaultMotoSettings = {
+            moto1Name: "Puyango",
+            moto1Price: 8.00,
+            moto2Name: "Tumbes Centro",
+            moto2Sub: "Coordinar con vendedor",
+            moto2Price: 0.00
+        };
+        if (!localStorage.getItem('minimarket_sanmich_moto_settings')) {
+            localStorage.setItem('minimarket_sanmich_moto_settings', JSON.stringify(defaultMotoSettings));
+        }
+
+        window.loadMotoDeliveryDisplay = function() {
+            const settings = JSON.parse(localStorage.getItem('minimarket_sanmich_moto_settings')) || defaultMotoSettings;
+            
+            document.getElementById('displayMotoName1').innerText = settings.moto1Name || "Puyango";
+            document.getElementById('displayMotoPrice1').innerText = parseFloat(settings.moto1Price || 8.00).toFixed(2);
+            document.getElementById('displayMotoBadge1').innerText = `${parseFloat(settings.moto1Price || 8.00).toFixed(2)}`;
+
+            document.getElementById('displayMotoName2').innerText = settings.moto2Name || "Tumbes Centro";
+            document.getElementById('displayMotoSub2').innerText = settings.moto2Sub || "Coordinar con vendedor";
+            const p2 = parseFloat(settings.moto2Price || 0.00);
+            document.getElementById('displayMotoBadge2').innerText = p2 > 0 ? `${p2.toFixed(2)}` : "A coordinar";
+        };
+
+        window.saveMotoDeliverySettings = function() {
+            const moto1Name = document.getElementById('adminMotoName1').value.trim() || "Puyango";
+            const moto1Price = parseFloat(document.getElementById('adminMotoPrice1').value) || 8.00;
+            const moto2Name = document.getElementById('adminMotoName2').value.trim() || "Tumbes Centro";
+            const moto2Sub = document.getElementById('adminMotoSub2').value.trim() || "Coordinar con vendedor";
+            const moto2Price = parseFloat(document.getElementById('adminMotoPrice2').value) || 0.00;
+
+            const settings = { moto1Name, moto1Price, moto2Name, moto2Sub, moto2Price };
+            localStorage.setItem('minimarket_sanmich_moto_settings', JSON.stringify(settings));
+            window.loadMotoDeliveryDisplay();
+            window.showToast('¡Opciones de Delivery en Moto actualizadas con éxito! 🛵✨');
+        };
+
+        window.addMotoDeliveryToCartDynamic = function(optionNum, btnEl) {
+            const settings = JSON.parse(localStorage.getItem('minimarket_sanmich_moto_settings')) || defaultMotoSettings;
+            if (optionNum === 1) {
+                window.addToCart(`Delivery Moto: ${settings.moto1Name} (Costo: S/ ${parseFloat(settings.moto1Price).toFixed(2)})`, parseFloat(settings.moto1Price));
+            } else {
+                window.addToCart(`Delivery Moto: ${settings.moto2Name} (${settings.moto2Sub})`, parseFloat(settings.moto2Price));
+            }
+            window.showToast('¡Producto seleccionado con éxito! 🛵✨');
+        };
+
+        if (!localStorage.getItem('minimarket_sanmich_empaque_price')) {
+            localStorage.setItem('minimarket_sanmich_empaque_price', '1.50');
+        }
+
+        window.loadEmpaquePriceDisplay = function() {
+            const price = parseFloat(localStorage.getItem('minimarket_sanmich_empaque_price')) || 1.50;
+            const formatted = `S/ ${price.toFixed(2)}`;
+            const t1 = document.getElementById('displayEmpaquePriceText');
+            const t2 = document.getElementById('displayEmpaquePriceSubtext');
+            if (t1) t1.innerText = formatted;
+            if (t2) t2.innerText = formatted;
+        };
+
+        window.saveEmpaquePriceSettings = function() {
+            const val = parseFloat(document.getElementById('adminEmpaquePrice').value);
+            if (isNaN(val) || val < 0) {
+                alert('Por favor ingresa un precio válido.');
+                return;
+            }
+            localStorage.setItem('minimarket_sanmich_empaque_price', val.toFixed(2));
+            window.loadEmpaquePriceDisplay();
+            window.showToast('¡Precio de empaque actualizado con éxito! 🛡️✨');
+        };
+
+        window.selectCourierOption = function(key, element) {
+            const couriers = JSON.parse(localStorage.getItem('minimarket_sanmich_couriers')) || defaultCouriers;
+            const courierName = couriers[key] || "Agencia Seleccionada";
+
+            document.querySelectorAll('.courier-info-card').forEach(card => {
+                card.classList.remove('selected-led');
+            });
+
+            element.classList.add('selected-led');
+            window.addToCart(`El cliente a añadido esta opcion de esta agencia: ${courierName}`, 0.00);
+            window.showToast('¡Ha sido añadido a su producto con éxito! 🚚✨');
+        };
+
+        const defaultPayments = {
+            yape: "991406574 (Minimarket Sanmich)",
+            plin: "991406574 (Minimarket Sanmich)",
+            bcp: "575-xxxxxxxx-0-xx (CCI: 002-xxxxxxxxxxxx)",
+            interbank: "300-300xxxxxxxxxx (CCI: 003-xxxxxxxxxxxx)"
+        };
+        if (!localStorage.getItem('minimarket_sanmich_payments')) {
+            localStorage.setItem('minimarket_sanmich_payments', JSON.stringify(defaultPayments));
+        }
+
+        const defaultCouriers = {
+            courier1: "SHALOM EXPRESS",
+            courier2: "OLVA COURIER",
+            courier3: "MUY PRONTO",
+            courier4: "MUY PRONTO"
+        };
+        if (!localStorage.getItem('minimarket_sanmich_couriers')) {
+            localStorage.setItem('minimarket_sanmich_couriers', JSON.stringify(defaultCouriers));
+        }
+
+        const defaultBanners = [
+            { tag: "PATROCINADO / OFERTA", title: "Delicioso, Crunchy & Cremoso", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBVZrgClZfat_blcQCGHyfE-F5ImzNqOHAXqxcOunlLA&s=10", seconds: 5 },
+            { tag: "NUEVO INGRESO", title: "Abarrotes Frescos para tu Hogar", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO_Fv5XOFEIv8eplY2Jj66uzQYnVPQCY8_I8owpRB0eg&s=10", seconds: 5 },
+            { tag: "OFERTA DEL DÍA", title: "Sabor Casero al Mejor Precio", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80", seconds: 5 },
+            { tag: "EXCLUSIVO SANMICH", title: "Tamales y Hallacas Tradicionales", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80", seconds: 5 },
+            { tag: "CALIDAD SUPREMA", title: "Ají Panca Fresco y Natural", img: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=800&q=80", seconds: 5 },
+            { tag: "DULCE TUMBES", title: "Alfajores Caseros Artesanales", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80", seconds: 5 },
+            { tag: "ENVÍOS NACIONALES", title: "Delivery Rápido y Seguro", img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80", seconds: 5 },
+            { tag: "FAMILIA SANMICH", title: "Sabor Tradicional Peruano", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80", seconds: 5 }
+        ];
+
+        if (!localStorage.getItem('minimarket_sanmich_banners_list')) {
+            localStorage.setItem('minimarket_sanmich_banners_list', JSON.stringify(defaultBanners));
+        }
+
+        let currentBannerIdx = 0;
+        let bannerInterval = null;
+
+        window.initBannerCarousel = function() {
+            const banners = JSON.parse(localStorage.getItem('minimarket_sanmich_banners_list')) || defaultBanners;
+            const dotsContainer = document.getElementById('bannerDotsContainer');
+            if (dotsContainer) {
+                dotsContainer.innerHTML = banners.map((_, i) => `<div class="banner-dot ${i === 0 ? 'active' : ''}" onclick="goToBanner(${i})"></div>`).join('');
+            }
+            window.loadCourierDisplay();
+            window.loadEmpaquePriceDisplay();
+            window.loadMotoDeliveryDisplay();
+            window.showBanner(currentBannerIdx);
+            window.restartBannerTimer();
+        };
+
+        window.loadCourierDisplay = function() {
+            const couriers = JSON.parse(localStorage.getItem('minimarket_sanmich_couriers')) || defaultCouriers;
+            const c1 = document.getElementById('displayCourier1');
+            const c2 = document.getElementById('displayCourier2');
+            const c3 = document.getElementById('displayCourier3');
+            const c4 = document.getElementById('displayCourier4');
+            if (c1) c1.querySelector('.c-name').innerText = couriers.courier1 || 'SHALOM EXPRESS';
+            if (c2) c2.querySelector('.c-name').innerText = couriers.courier2 || 'OLVA COURIER';
+            if (c3) c3.querySelector('.c-name').innerText = couriers.courier3 || 'MUY PRONTO';
+            if (c4) c4.querySelector('.c-name').innerText = couriers.courier4 || 'MUY PRONTO';
+        };
+
+        window.restartBannerTimer = function() {
+            if (bannerInterval) clearInterval(bannerInterval);
+            const banners = JSON.parse(localStorage.getItem('minimarket_sanmich_banners_list')) || defaultBanners;
+            const activeBanner = banners[currentBannerIdx] || defaultBanners[0];
+            const sec = parseInt(activeBanner.seconds) || 3;
+
+            bannerInterval = setInterval(() => {
+                currentBannerIdx = (currentBannerIdx + 1) % banners.length;
+                window.showBanner(currentBannerIdx);
+            }, sec * 1000);
+        };
+
+        window.showBanner = function(index) {
+            const banners = JSON.parse(localStorage.getItem('minimarket_sanmich_banners_list')) || defaultBanners;
+            if (index < 0) index = banners.length - 1;
+            if (index >= banners.length) index = 0;
+            currentBannerIdx = index;
+
+            const bannerEl = document.getElementById('mainPromoBanner');
+            const activeBanner = banners[currentBannerIdx] || defaultBanners[0];
+            const currentImg = activeBanner.img || defaultBanners[0].img;
+
+            if (bannerEl) {
+                bannerEl.style.opacity = 0;
+                setTimeout(() => {
+                    document.getElementById('bannerTag').innerText = activeBanner.tag || 'OFERTA';
+                    document.getElementById('bannerTitle').innerText = activeBanner.title || '';
+                    document.getElementById('bannerImg').src = currentImg;
+                    bannerEl.style.opacity = 1;
+                }, 200);
+            }
+
+            const dots = document.querySelectorAll('.banner-dot');
+            dots.forEach((dot, i) => {
+                if (i === currentBannerIdx) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        };
+
+        window.changeBanner = function(direction) {
+            const banners = JSON.parse(localStorage.getItem('minimarket_sanmich_banners_list')) || defaultBanners;
+            currentBannerIdx = (currentBannerIdx + direction + banners.length) % banners.length;
+            window.showBanner(currentBannerIdx);
+            window.restartBannerTimer();
+        };
+
+        window.goToBanner = function(index) {
+            window.showBanner(index);
+            window.restartBannerTimer();
+        };
+
+        window.loadSelectedBannerToForm = function() {
+            const banners = JSON.parse(localStorage.getItem('minimarket_sanmich_banners_list')) || defaultBanners;
+            const selectIdx = parseInt(document.getElementById('bannerSelectIndex').value);
+            const target = banners[selectIdx] || defaultBanners[selectIdx];
+            
+            if (target) {
+                document.getElementById('adminBannerTag').value = target.tag || '';
+                document.getElementById('adminBannerTitle').value = target.title || '';
+                document.getElementById('singleBannerImgUrl').value = target.img || '';
+                document.getElementById('adminBannerGlobalSeconds').value = target.seconds || 3;
+            }
+
+            const motoSet = JSON.parse(localStorage.getItem('minimarket_sanmich_moto_settings')) || defaultMotoSettings;
+            document.getElementById('adminMotoName1').value = motoSet.moto1Name || '';
+            document.getElementById('adminMotoPrice1').value = motoSet.moto1Price || '';
+            document.getElementById('adminMotoName2').value = motoSet.moto2Name || '';
+            document.getElementById('adminMotoSub2').value = motoSet.moto2Sub || '';
+            document.getElementById('adminMotoPrice2').value = motoSet.moto2Price || '';
+
+            document.getElementById('adminEmpaquePrice').value = localStorage.getItem('minimarket_sanmich_empaque_price') || '1.50';
+
+            const payments = JSON.parse(localStorage.getItem('minimarket_sanmich_payments')) || defaultPayments;
+            document.getElementById('adminYape').value = payments.yape || '';
+            document.getElementById('adminPlin').value = payments.plin || '';
+            document.getElementById('adminBcp').value = payments.bcp || '';
+            document.getElementById('adminInterbank').value = payments.interbank || '';
+
+            const couriers = JSON.parse(localStorage.getItem('minimarket_sanmich_couriers')) || defaultCouriers;
+            document.getElementById('adminCourier1').value = couriers.courier1 || '';
+            document.getElementById('adminCourier2').value = couriers.courier2 || '';
+            document.getElementById('adminCourier3').value = couriers.courier3 || '';
+            document.getElementById('adminCourier4').value = couriers.courier4 || '';
+        };
+
+        window.saveCurrentBannerConfig = function() {
+            let banners = JSON.parse(localStorage.getItem('minimarket_sanmich_banners_list')) || defaultBanners;
+            const selectIdx = parseInt(document.getElementById('bannerSelectIndex').value);
+            const globalSec = parseInt(document.getElementById('adminBannerGlobalSeconds').value) || 5;
+
+            const tag = document.getElementById('adminBannerTag').value.trim() || defaultBanners[selectIdx].tag;
+            const title = document.getElementById('adminBannerTitle').value.trim() || defaultBanners[selectIdx].title;
+            const img = document.getElementById('singleBannerImgUrl').value.trim() || defaultBanners[selectIdx].img;
+
+            banners = banners.map((b, i) => {
+                if (i === selectIdx) {
+                    return { tag, title, img, seconds: globalSec };
+                }
+                return { ...b, seconds: globalSec };
+            });
+
+            localStorage.setItem('minimarket_sanmich_banners_list', JSON.stringify(banners));
+
+            window.showBanner(currentBannerIdx);
+            window.restartBannerTimer();
+            window.showToast(`¡Tiempo de ${globalSec}s aplicado automáticamente a todos los banners! 📢✨`);
+        };
+
+        window.savePaymentSettings = function() {
+            const yape = document.getElementById('adminYape').value.trim();
+            const plin = document.getElementById('adminPlin').value.trim();
+            const bcp = document.getElementById('adminBcp').value.trim();
+            const interbank = document.getElementById('adminInterbank').value.trim();
+
+            const payments = { yape, plin, bcp, interbank };
+            localStorage.setItem('minimarket_sanmich_payments', JSON.stringify(payments));
+            window.showToast('¡Cuentas de pago actualizadas con éxito! 💳✨');
+        };
+
+        window.saveCourierSettings = function() {
+            const courier1 = document.getElementById('adminCourier1').value.trim() || "SHALOM EXPRESS";
+            const courier2 = document.getElementById('adminCourier2').value.trim() || "OLVA COURIER";
+            const courier3 = document.getElementById('adminCourier3').value.trim() || "MUY PRONTO";
+            const courier4 = document.getElementById('adminCourier4').value.trim() || "MUY PRONTO";
+
+            const couriers = { courier1, courier2, courier3, courier4 };
+            localStorage.setItem('minimarket_sanmich_couriers', JSON.stringify(couriers));
+            window.loadCourierDisplay();
+            window.showToast('¡Nombres de agencias actualizados con éxito! 🚚✨');
+        };
+
+        window.handleAddressInputBlur = function() {
+            const notes = document.getElementById('deliveryAddressNotes').value.trim();
+            if (notes !== "") {
+                window.showToast('📍 ¡Dirección guardada correctamente!');
+            }
+        };
+
+        const initialProducts = [
+            { title: "Ají Panca", desc: "Ají panca seleccionado de excelente calidad casera.", price: 2.50, badge: "Especial", images: ["https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=500&q=80"] },
+            { title: "Tamales Criollos de Hoja", desc: "Rellenos tradicionales envueltos en hoja suave de plátano con sabor casero.", price: 7.50, badge: "Más Vendido", images: ["https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80"] },
+            { title: "Hallacas Especiales", desc: "Guiso casero sazonado con la receta tradicional de la familia para tu hogar.", price: 12.00, badge: "Recomendado", images: ["https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=500&q=80"] },
+            { title: "Alfajores Bañados en Chocolate", desc: "Caja de alfajores rellenos de manjar y cubiertos de chocolate.", price: 15.00, badge: "Dulce", images: ["https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=500&q=80"] },
+            { title: "Alfajores Clásicos con Grageas", desc: "Deliciosos alfajores tradicionales decorados con grageas de colores.", price: 10.00, badge: "Tradicional", images: ["https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80"] }
+        ];
+
+        if (!localStorage.getItem('minimarket_sanmich_all_products')) {
+            localStorage.setItem('minimarket_sanmich_all_products', JSON.stringify(initialProducts));
+        }
+
+        window.loadProductsToDOM = function() {
+            const allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+            const grid = document.getElementById('productsGridContainer');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            allProducts.forEach((prod, pIdx) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.setAttribute('data-title', prod.title || '');
+                card.setAttribute('data-desc', prod.desc || '');
+                
+                const cleanName = (prod.title || '').replace(/'/g, "\\'");
+                const fallbackImg = 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80';
+                let imgList = (Array.isArray(prod.images) && prod.images.length > 0) ? prod.images.filter(img => img && img.trim() !== '') : [fallbackImg];
+                if (imgList.length === 0) imgList = [fallbackImg];
+                const mainImg = imgList[0];
+
+                const thumbnails = imgList.length > 1 ? `
+                    <div class="product-thumbnails">
+                        ${imgList.map((img, imgIdx) => `
+                            <img src="${img}" class="product-thumb" alt="Miniatura ${imgIdx + 1}" loading="lazy" onclick="window.openZoomModalForProduct(${pIdx}, ${imgIdx})">
+                        `).join('')}
+                    </div>
+                ` : '';
+
+                card.innerHTML = `
+                    <span class="product-badge">${prod.badge || 'Especial'}</span>
+                    <div class="product-gallery">
+                        <img src="${mainImg}" class="product-img" alt="${prod.title}" onclick="window.openZoomModalForProduct(${pIdx}, 0)" title="Abrir galería">
+                        ${thumbnails}
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">${prod.title || 'Producto'}</div>
+                        <div class="product-desc">${prod.desc || ''}</div>
+                        <div class="product-bottom">
+                            <span class="product-price">S/ ${parseFloat(prod.price || 0).toFixed(2)}</span>
+                            <button class="btn-add" onclick="window.addToCartWithSpecialEffect('${cleanName}', ${parseFloat(prod.price || 0)}, this)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        };
+
+        window.renderAdminProductList = function() {
+            const allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+            const selectEl = document.getElementById('productSelectEdit');
+            const listEl = document.getElementById('adminProductList');
+
+            selectEl.innerHTML = `<option value="">-- Nuevo Producto --</option>` + allProducts.map((p, i) => `<option value="${i}">${p.title} (S/ ${parseFloat(p.price).toFixed(2)})</option>`).join('');
+
+            listEl.innerHTML = allProducts.map((p, i) => `
+                <div class="admin-item-row">
+                    <span><strong>${p.title}</strong> - S/ ${parseFloat(p.price).toFixed(2)}</span>
+                    <div>
+                        <button style="background:var(--primary-pink); color:white; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;" onclick="selectProductToEdit(${i})"><i class="fa-solid fa-pen"></i></button>
+                        <button style="background:#e53935; color:white; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; margin-left:4px;" onclick="deleteProduct(${i})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        window.clearProductForm = function() {
+            document.getElementById('editingProductIndex').value = '-1';
+            document.getElementById('adminProdTitle').value = '';
+            document.getElementById('adminProdPrice').value = '';
+            document.getElementById('adminProdBadge').value = '';
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`adminProdImg${i}`).value = '';
+            }
+            document.getElementById('adminProdDesc').value = '';
+            document.getElementById('productSelectEdit').value = '';
+        };
+
+        window.loadProductToForm = function() {
+            const idx = document.getElementById('productSelectEdit').value;
+            if (idx === "") {
+                window.clearProductForm();
+                return;
+            }
+            const allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+            const p = allProducts[idx];
+            if (p) {
+                document.getElementById('editingProductIndex').value = idx;
+                document.getElementById('adminProdTitle').value = p.title || '';
+                document.getElementById('adminProdPrice').value = p.price || '';
+                document.getElementById('adminProdBadge').value = p.badge || '';
+                
+                for (let i = 1; i <= 6; i++) {
+                    const imgVal = (p.images && p.images[i - 1]) ? p.images[i - 1] : '';
+                    document.getElementById(`adminProdImg${i}`).value = imgVal;
+                }
+                document.getElementById('adminProdDesc').value = p.desc || '';
+            }
+        };
+
+        window.selectProductToEdit = function(idx) {
+            document.getElementById('productSelectEdit').value = idx;
+            window.loadProductToForm();
+        };
+
+        window.saveProductFromForm = function() {
+            let allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+            const idx = parseInt(document.getElementById('editingProductIndex').value);
+            const title = document.getElementById('adminProdTitle').value.trim();
+            const price = parseFloat(document.getElementById('adminProdPrice').value);
+            const badge = document.getElementById('adminProdBadge').value.trim() || 'Especial';
+            const desc = document.getElementById('adminProdDesc').value.trim();
+
+            let images = [];
+            for (let i = 1; i <= 6; i++) {
+                const val = document.getElementById(`adminProdImg${i}`).value.trim();
+                if (val) images.push(val);
+            }
+            if (images.length === 0) {
+                images = ["https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80"];
+            }
+
+            if (!title || isNaN(price)) {
+                alert('Por favor ingresa un nombre y un precio válido.');
+                return;
+            }
+
+            const newProd = { title, price, badge, desc, images };
+
+            if (idx >= 0 && idx < allProducts.length) {
+                allProducts[idx] = newProd;
+            } else {
+                allProducts.push(newProd);
+            }
+
+            localStorage.setItem('minimarket_sanmich_all_products', JSON.stringify(allProducts));
+            window.loadProductsToDOM();
+            window.renderAdminProductList();
+            window.clearProductForm();
+            window.showToast('¡Producto guardado correctamente! 📦✨');
+        };
+
+        window.deleteProduct = function(idx) {
+            let allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+            if (confirm(`¿Estás seguro de eliminar "${allProducts[idx].title}"?`)) {
+                allProducts.splice(idx, 1);
+                localStorage.setItem('minimarket_sanmich_all_products', JSON.stringify(allProducts));
+                window.loadProductsToDOM();
+                window.renderAdminProductList();
+                window.clearProductForm();
+                window.showToast('¡Producto eliminado con éxito! 🗑️');
+            }
+        };
+
+        let currentZoomImages = [];
+        let currentZoomIndex = 0;
+        let currentZoomScale = 1;
+        let imgTranslateX = 0;
+        let imgTranslateY = 0;
+
+        window.openZoomModalForProduct = function(prodIdx, imgIdx) {
+            const allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+            const p = allProducts[prodIdx];
+            if (!p || !p.images || p.images.length === 0) {
+                currentZoomImages = ['https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80'];
+            } else {
+                currentZoomImages = p.images.filter(img => img && img.trim() !== '');
+                if (currentZoomImages.length === 0) currentZoomImages = ['https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80'];
+            }
+            currentZoomIndex = imgIdx >= currentZoomImages.length ? 0 : imgIdx;
+            resetZoom();
+            updateZoomModalView();
+            document.getElementById('zoomModal').classList.add('active');
+        };
+
+        window.slideZoom = function(direction) {
+            currentZoomIndex = (currentZoomIndex + direction + currentZoomImages.length) % currentZoomImages.length;
+            resetZoom();
+            updateZoomModalView();
+        };
+
+        window.updateZoomModalView = function() {
+            const imgEl = document.getElementById('zoomImage');
+            const counterEl = document.getElementById('zoomCounter');
+            imgEl.style.opacity = 0;
+            setTimeout(() => {
+                imgEl.src = currentZoomImages[currentZoomIndex];
+                applyImageTransform();
+                imgEl.style.opacity = 1;
+            }, 120);
+            counterEl.innerText = `${currentZoomIndex + 1} / ${currentZoomImages.length}`;
+        };
+
+        window.adjustZoom = function(amount) {
+            currentZoomScale = Math.max(1, Math.min(5, currentZoomScale + amount));
+            if (currentZoomScale === 1) {
+                imgTranslateX = 0;
+                imgTranslateY = 0;
+            }
+            applyImageTransform();
+        };
+
+        window.resetZoom = function() {
+            currentZoomScale = 1;
+            imgTranslateX = 0;
+            imgTranslateY = 0;
+            applyImageTransform();
+        };
+
+        function applyImageTransform() {
+            const imgEl = document.getElementById('zoomImage');
+            if (imgEl) {
+                imgEl.style.transform = `scale(${currentZoomScale}) translate(${imgTranslateX}px, ${imgTranslateY}px)`;
+            }
+        }
+
+        window.closeZoomModal = function() { 
+            document.getElementById('zoomModal').classList.remove('active'); 
+            resetZoom();
+        };
+
+        // Lógica de Lupa, Arraste y Deslizamiento (Swipe y Touch Drag) (REQUISITO 2 y 3)
+        (function setupZoomInteractions() {
+            const container = document.getElementById('zoomContainer');
+            if (!container) return;
+
+            let isDragging = false;
+            let startX = 0;
+            let startY = 0;
+            let touchStartX = 0;
+            let touchStartY = 0;
+
+            container.addEventListener('mousedown', (e) => {
+                if (currentZoomScale > 1) {
+                    isDragging = true;
+                    startX = e.clientX - imgTranslateX;
+                    startY = e.clientY - imgTranslateY;
+                    e.preventDefault();
+                }
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging || currentZoomScale <= 1) return;
+                imgTranslateX = e.clientX - startX;
+                imgTranslateY = e.clientY - startY;
+                applyImageTransform();
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            // Soporte táctil para deslizar fotos (celulares) y mover zoom
+            container.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                    if (currentZoomScale > 1) {
+                        isDragging = true;
+                        startX = touchStartX - imgTranslateX;
+                        startY = touchStartY - imgTranslateY;
+                    }
+                }
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                if (isDragging && currentZoomScale > 1 && e.touches.length === 1) {
+                    imgTranslateX = e.touches[0].clientX - startX;
+                    imgTranslateY = e.touches[0].clientY - startY;
+                    applyImageTransform();
+                }
+            }, { passive: true });
+
+            container.addEventListener('touchend', (e) => {
+                isDragging = false;
+                if (currentZoomScale === 1 && e.changedTouches.length === 1) {
+                    const deltaX = e.changedTouches[0].clientX - touchStartX;
+                    const deltaY = e.changedTouches[0].clientY - touchStartY;
+                    if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+                        window.slideZoom(deltaX < 0 ? 1 : -1);
+                    }
+                }
+            }, { passive: true });
+        })();
+
+        // Atajos de teclado para galería ampliada
+        document.addEventListener('keydown', function(event) {
+            const zoomModal = document.getElementById('zoomModal');
+            if (!zoomModal || !zoomModal.classList.contains('active')) return;
+            if (event.key === 'ArrowRight') window.slideZoom(1);
+            if (event.key === 'ArrowLeft') window.slideZoom(-1);
+            if (event.key === 'Escape') window.closeZoomModal();
+            if (event.key === '+' || event.key === '=') window.adjustZoom(0.3);
+            if (event.key === '-' || event.key === '_') window.adjustZoom(-0.3);
+        });
+
+        const defaultReviews = [
+            { author: "Carlos Mendoza (Tumbes)", score: "8 de 8", text: "¡Los tamales y hallacas llegaron súper calientes y frescos! Tienen una sazón casera inigualable. ¡Recomendadísimo!" },
+            { author: "Lucía Fernández (Piura)", score: "1 de 4", text: "todo llego bien mi pedido aun que le recomendaria que mejoren un poco al responder ." },
+            { author: "Javier Ramírez (Lima)", score: "9 de 9 ", text: "¡Vaya, vaya, no me arrepiento en lo absoluto! El envío con Shalom llegó rápido y los productos son de primera." },
+            { author: "Rosa Torres (Trujillo)", score: "7 de 6", text: "Muy buena calidad y atención cordial. Da gusto comprar en una tienda tan formal y seria." },
+            { author: "Miguel Ángel (Chiclayo)", score: "10 de 10", text: "¡Todo perfecto! El pago por Yape fue rapidísimo y el pedido superó todas mis expectativas. ¡Excelente!" }
+        ];
+
+        if (!localStorage.getItem('minimarket_sanmich_reviews')) {
+            localStorage.setItem('minimarket_sanmich_reviews', JSON.stringify(defaultReviews));
+        }
+
+        window.loadReviewsToDOM = function() {
+            const reviews = JSON.parse(localStorage.getItem('minimarket_sanmich_reviews')) || defaultReviews;
+            const container = document.getElementById('reviewsContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            reviews.forEach(r => {
+                container.innerHTML += `
+                    <div class="review-card">
+                        <div>
+                            <div class="review-header">
+                                <span class="review-author"><i class="fa-solid fa-user-check"></i> ${r.author}</span>
+                                <span class="review-score">${r.score}</span>
+                            </div>
+                            <p class="review-text">"${r.text}"</p>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                `;
+            });
+        };
+
+        window.renderAdminReviewsList = function() {
+            const reviews = JSON.parse(localStorage.getItem('minimarket_sanmich_reviews')) || defaultReviews;
+            const listEl = document.getElementById('adminReviewsList');
+            if (!listEl) return;
+
+            listEl.innerHTML = reviews.map((r, i) => `
+                <div class="admin-item-row">
+                    <span><strong>${r.author}</strong> (${r.score})</span>
+                    <div>
+                        <button style="background:var(--primary-pink); color:white; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;" onclick="editReview(${i})"><i class="fa-solid fa-pen"></i></button>
+                        <button style="background:#e53935; color:white; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; margin-left:4px;" onclick="deleteReview(${i})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        window.editReview = function(idx) {
+            let reviews = JSON.parse(localStorage.getItem('minimarket_sanmich_reviews')) || defaultReviews;
+            const r = reviews[idx];
+            const newText = prompt("Edita el texto de la reseña:", r.text);
+            if (newText !== null) {
+                reviews[idx].text = newText.trim();
+                localStorage.setItem('minimarket_sanmich_reviews', JSON.stringify(reviews));
+                window.loadReviewsToDOM();
+                window.renderAdminReviewsList();
+                window.showToast('¡Reseña actualizada con éxito! ⭐');
+            }
+        };
+
+        window.deleteReview = function(idx) {
+            let reviews = JSON.parse(localStorage.getItem('minimarket_sanmich_reviews')) || defaultReviews;
+            if (confirm("¿Estás seguro de eliminar esta reseña?")) {
+                reviews.splice(idx, 1);
+                localStorage.setItem('minimarket_sanmich_reviews', JSON.stringify(reviews));
+                window.loadReviewsToDOM();
+                window.renderAdminReviewsList();
+                window.showToast('¡Reseña eliminada! 🗑️');
+            }
+        };
+
+        window.addNewCustomerReview = function() {
+            const author = document.getElementById('reviewAuthorName').value.trim();
+            const score = document.getElementById('reviewScoreSelect').value;
+            const text = document.getElementById('reviewMessageText').value.trim();
+
+            if (!author || !text) {
+                alert('Por favor ingresa tu nombre y tu opinión antes de publicar.');
+                return;
+            }
+
+            let reviews = JSON.parse(localStorage.getItem('minimarket_sanmich_reviews')) || defaultReviews;
+            reviews.unshift({ author, score, text });
+            localStorage.setItem('minimarket_sanmich_reviews', JSON.stringify(reviews));
+
+            document.getElementById('reviewAuthorName').value = '';
+            document.getElementById('reviewMessageText').value = '';
+            window.loadReviewsToDOM();
+            window.showToast('¡Gracias por tu reseña! Publicada con éxito ⭐💖');
+        };
+
+        window.askAdminPassword = function() {
+            document.getElementById('adminPwdInput').value = '';
+            document.getElementById('adminPasswordModal').classList.add('active');
+        };
+        window.closeAdminPasswordModal = function() { document.getElementById('adminPasswordModal').classList.remove('active'); };
+        window.handleAdminPwdPress = function(e) { if (e.key === 'Enter') window.verifyAdminPassword(); };
+        
+        window.verifyAdminPassword = function() {
+            const val = document.getElementById('adminPwdInput').value.trim();
+            if (val === '030379' || val === '73421475') {
+                window.closeAdminPasswordModal();
+                document.getElementById('addModal').classList.add('active');
+                window.loadSelectedBannerToForm();
+                window.renderAdminProductList();
+                window.renderAdminReviewsList();
+            } else {
+                alert('🔑 Acceso Denegado: Clave  incorrecta.');
+            }
+        };
+        window.closeAddModal = function() { document.getElementById('addModal').classList.remove('active'); };
+
+        window.updateCartUI = function() {
+            window.cart = window.cart || [];
+            document.getElementById('cart-count').innerText = window.cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+            let total = 0;
+            const itemsContainer = document.getElementById('cartItems');
+            itemsContainer.innerHTML = '';
+            window.cart.forEach((item, idx) => {
+                total += item.price * (item.qty || 1);
+                itemsContainer.innerHTML += `
+                    <div class="cart-item">
+                        <div style="flex-grow:1;">
+                            <div style="font-weight:700; font-size:0.85rem;">${item.title}</div>
+                            <div style="font-size:0.75rem; color:var(--primary-pink); font-weight:800;">S/ ${item.price.toFixed(2)} x ${item.qty || 1}</div>
+                        </div>
+                        <button style="background:none; border:none; color:#e53935; cursor:pointer;" onclick="window.removeFromCart(${idx})"><i class="fa-solid fa-trash"></i></button>
+                    </div>`;
+            });
+            document.getElementById('cartTotal').innerText = `S/ ${total.toFixed(2)}`;
+            localStorage.setItem('minimarket_sanmich_cart', JSON.stringify(window.cart));
+        };
+
+        window.addToCartWithSpecialEffect = function(title, price, btnEl) {
+            window.addToCart(title, price);
+            if (btnEl) {
+                const rect = btnEl.getBoundingClientRect();
+                for (let i = 0; i < 8; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = `sparkle-particle`;
+                    particle.innerText = '✨';
+                    particle.style.left = `${rect.left + 15}px`;
+                    particle.style.top = `${rect.top + 15}px`;
+                    particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 160}px`);
+                    particle.style.setProperty('--ty', `${(Math.random() - 0.5) * 160 - 40}px`);
+                    document.body.appendChild(particle);
+                    setTimeout(() => particle.remove(), 800);
+                }
+            }
+        };
+
+        window.addToCart = function(title, price) {
+            window.cart = window.cart || [];
+            const existing = window.cart.find(i => i.title === title);
+            if (existing) existing.qty = (existing.qty || 1) + 1;
+            else window.cart.push({ title, price, qty: 1 });
+            window.updateCartUI();
+            window.showToast(`¡"${title}" agregado! 🛍️`);
+        };
+
+        window.removeFromCart = function(index) {
+            window.cart.splice(index, 1);
+            window.updateCartUI();
+        };
+
+        window.toggleCart = function() {
+            document.getElementById('cartDrawer').classList.toggle('active');
+            document.querySelector('.cart-overlay').classList.toggle('active');
+        };
+
+        window.addEmpaqueToCart = function() {
+            const currentPrice = parseFloat(localStorage.getItem('minimarket_sanmich_empaque_price')) || 1.50;
+            window.addToCart(`🛡️ Empaque Especial (Cartón doble y corcho)`, currentPrice);
+        };
+
+        window.sendWhatsApp = function() {
+            if (!window.cart || window.cart.length === 0) {
+                alert('El carrito está vacío.');
+                return;
+            }
+            let msg = "¡Hola Minimarket Sanmich! 💖 Deseo realizar el siguiente pedido:\n\n";
+            let total = 0;
+            window.cart.forEach(i => {
+                const sub = i.price * (i.qty || 1);
+                total += sub;
+                msg += `• ${i.title} (x${i.qty || 1}) - S/ ${sub.toFixed(2)}\n`;
+            });
+            msg += `\n*TOTAL:* S/ ${total.toFixed(2)}`;
+            window.open(`https://api.whatsapp.com/send?phone=51991406574&text=${encodeURIComponent(msg)}`, '_blank');
+        };
+
+        window.showToast = function(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        };
+
+        window.filterProducts = function() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.product-card').forEach(card => {
+                const t = card.getAttribute('data-title').toLowerCase();
+                const d = card.getAttribute('data-desc').toLowerCase();
+                card.style.display = (t.includes(query) || d.includes(query)) ? 'flex' : 'none';
+            });
+        };
+
+        window.toggleAIChat = function() {
+            document.getElementById('aiChat').classList.toggle('active');
+        };
+
+        window.handleQuickOption = function(topic) {
+            let response = "";
+            const payments = JSON.parse(localStorage.getItem('minimarket_sanmich_payments')) || defaultPayments;
+            const empaquePrice = parseFloat(localStorage.getItem('minimarket_sanmich_empaque_price')) || 1.50;
+            
+            if (topic === 'pagos') {
+                response = `💳 ¡Con muchísimo gusto mi amor! Para realizar tus pagos de forma rápida y segura, te ofrecemos nuestras cuentas oficiales:<br>` +
+                           `• <b>Yape:</b> ${payments.yape}<br>` +
+                           `• <b>Plin:</b> ${payments.plin}<br>` +
+                           `• <b>BCP:</b> ${payments.bcp}<br>` +
+                           `• <b>Interbank:</b> ${payments.interbank}<br>` +
+                           `¡Quedo a tu entera disposición para cualquier consulta adicional! 🏦✨`;
+            } else if (topic === 'envios') {
+                response = "📦 Envíos seguros a nivel nacional con Pago en Destino (Tú pagas el costo del envío directamente en la agencia al recoger tu paquete). 🛵🎉";
+            } else if (topic === 'empaque') {
+                response = `🛡️ ¡Ay, me encanta cuidar cada detalle para ti! Nuestro empaque especial tiene un costo adicional mínimo de <b>S/ ${empaquePrice.toFixed(2)}</b>, e incluye cartón doble y corcho anti-golpe para que tus productos viajen totalmente protegidos y lleguen impecables a su destino. 👑📦`;
+            } else if (topic === 'hora') {
+                const now = new Date();
+                const horaPerú = now.toLocaleTimeString('es-PE', { timeZone: 'America/Lima', hour: '2-digit', minute: '2-digit' });
+                response = `⏰ ¡Con todo respeto y alegría CASERA! En este preciso instante, la hora exacta en el Perú marca las <b>${horaPerú}</b>. ¿En qué otra cosita te puedo servir hoy? 🕒✨`;
+            } else if (topic === 'productos') {
+                const allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+                response = `🌟 ¡Uy, elegiste bien mi amor! Déjame contarte sobre nuestras maravillas:<br><br>`;
+                allProducts.forEach(p => {
+                    response += `• <b>${p.title}</b> (S/ ${parseFloat(p.price).toFixed(2)}): ${p.desc}<br><br>`;
+                });
+                response += `¡Cada uno de nuestros productos ha sido elegido con sumo cuidado para engreír tu hogar con amor! 🌸💖`;
+            }
+
+            const body = document.getElementById('aiBody');
+            body.innerHTML += `<div class="ai-msg user">${event.target.innerText}</div>`;
+            body.scrollTop = body.scrollHeight;
+
+            simulateSamyResponse(response);
+        };
+
+        window.handleAIPress = function(e) { if (e.key === 'Enter') window.sendAIMessage(); };
+
+        window.sendAIMessage = function() {
+            const input = document.getElementById('aiInput');
+            const txt = input.value.trim().toLowerCase();
+            if (!txt) return;
+
+            const body = document.getElementById('aiBody');
+            body.innerHTML += `<div class="ai-msg user">${input.value}</div>`;
+            input.value = '';
+            body.scrollTop = body.scrollHeight;
+
+            const typingIndicator = document.getElementById('aiTypingIndicator');
+            typingIndicator.style.display = 'flex';
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                typingIndicator.style.display = 'none';
+                const payments = JSON.parse(localStorage.getItem('minimarket_sanmich_payments')) || defaultPayments;
+                const allProducts = JSON.parse(localStorage.getItem('minimarket_sanmich_all_products')) || initialProducts;
+                const empaquePrice = parseFloat(localStorage.getItem('minimarket_sanmich_empaque_price')) || 1.50;
+                
+                let reply = "";
+                const foundProduct = allProducts.find(p => txt.includes(p.title.toLowerCase()) || p.title.toLowerCase().split(' ').some(word => word.length > 3 && txt.includes(word)));
+
+                if (foundProduct) {
+                    reply = `¡Uy, elegiste bien mi amor! 💖 El producto **${foundProduct.title}** está a solo **S/ ${parseFloat(foundProduct.price).toFixed(2)}**. ${foundProduct.desc} 🌸✨`;
+                } else if (txt.includes('hora') || txt.includes('que hora es')) {
+                    const now = new Date();
+                    const horaPerú = now.toLocaleTimeString('es-PE', { timeZone: 'America/Lima', hour: '2-digit', minute: '2-digit' });
+                    reply = `⏰ ¡Con muchísimo gusto y respeto corazón! En este preciso instante la hora exacta en el Perú marca las **${horaPerú}**. ¿En qué otra cosita te puedo servir hoy? 🕒✨`;
+                } else if (txt.includes('pago') || txt.includes('yape') || txt.includes('plin') || txt.includes('bcp') || txt.includes('interbank')) {
+                    reply = `💳 ¡Excelente elección de medios de pago mi estimado(a)! Con total confianza y seguridad puedes transferir a:<br>` +
+                            `• <b>Yape:</b> ${payments.yape}<br>` +
+                            `• <b>Plin:</b> ${payments.plin}<br>` +
+                            `• <b>BCP:</b> ${payments.bcp}<br>` +
+                            `• <b>Interbank:</b> ${payments.interbank}<br>` +
+                            `¡Quedo a tu entera disposición para ayudarte! 🌟`;
+                } else if (txt.includes('envio') || txt.includes('delivery') || txt.includes('peru') || txt.includes('provincia') || txt.includes('contra entrega')) {
+                    reply = "📦 Envíos seguros a nivel nacional con Pago en Destino (Tú pagas el envío directamente en la agencia al recoger tu paquete). 🛵💨";
+                } else if (txt.includes('empaque') || txt.includes('caja') || txt.includes('corcho')) {
+                    reply = `🛡️ ¡Ay, me encanta cuidar cada detalle para ti! Nuestro empaque especial tiene un costo adicional mínimo de **S/ ${empaquePrice.toFixed(2)}**, e incluye cartón doble y corcho anti-golpe para que tus productos viajen totalmente protegidos y lleguen impecables a su destino. ✨📦`;
+                } else if (txt.includes('seguro') || txt.includes('tumbes') || txt.includes('confianza') || txt.includes('empresa') || txt.includes('perú')) {
+                    reply = "🔒 ¡Estás en las mejores manos! Somos una empresa digital 100% formal, segura y de entera confianza establecida con mucho orgullo en Tumbes, Perú. 🥰👍";
+                } else if (txt.includes('producto') || txt.includes('recomienda') || txt.includes('calidad') || txt.includes('bueno') || txt.includes('tienda')) {
+                    reply = `🌟 ¡Uy, elegiste bien CASERA ! Déjame detallarte lo que tenemos con muchísimo cariño para ti:<br><br>`;
+                    allProducts.forEach(p => {
+                        reply += `• <b>${p.title}</b> (S/ ${parseFloat(p.price).toFixed(2)}): ${p.desc}<br><br>`;
+                    });
+                    reply += `¡Todo hecho con amor y profesionalismo para tu hogar! 🌸😋`;
+                } else {
+                    reply = "¡HOLA CASERA! 🥰 Estoy aquí MUY ENCANTADA EN PODER AYUDARTE  y con el mayor respeto para resolver cualquier duda sobre nuestros abarrotes, formas de pago, empaques o envíos. ¿Hay algo en especial que te gustaría llevar hoy día? 🛍️💖";
+                }
+
+                appendBotMessage(reply);
+            }, 1400);
+        };
+
+        function simulateSamyResponse(htmlText) {
+            const typingIndicator = document.getElementById('aiTypingIndicator');
+            const body = document.getElementById('aiBody');
+            typingIndicator.style.display = 'flex';
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                typingIndicator.style.display = 'none';
+                appendBotMessage(htmlText);
+            }, 1200);
+        }
+
+        function appendBotMessage(htmlText) {
+            const body = document.getElementById('aiBody');
+            const div = document.createElement('div');
+            div.className = 'ai-msg bot';
+            div.innerHTML = htmlText;
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        window.onload = function() {
+            startCountdown();
+            window.initBannerCarousel();
+            window.loadProductsToDOM();
+            window.loadReviewsToDOM();
+            window.updateCartUI();
+        };
+    </script>
+</body>
+</html>
