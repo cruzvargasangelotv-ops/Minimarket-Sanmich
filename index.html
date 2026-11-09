@@ -2057,7 +2057,7 @@
                 const foundProduct = allProducts.find(p => txt.includes(p.title.toLowerCase()) || p.title.toLowerCase().split(' ').some(word => word.length > 3 && txt.includes(word)));
 
                 if (foundProduct) {
-                    reply = `¡Uy, elegiste bien mi amor! 💖 El producto **${foundProduct.title}** está a solo **S/ ${parseFloat(foundProduct.price).toFixed(2)}**. ${foundProduct.desc} 🌸✨`;
+                    reply = `¡Uy, elegiste bien mi casera! 💖 El producto **${foundProduct.title}** está a solo **S/ ${parseFloat(foundProduct.price).toFixed(2)}**. ${foundProduct.desc} 🌸✨`;
                 } else if (txt.includes('hora') || txt.includes('que hora es')) {
                     const now = new Date();
                     const horaPerú = now.toLocaleTimeString('es-PE', { timeZone: 'America/Lima', hour: '2-digit', minute: '2-digit' });
